@@ -35,13 +35,51 @@ Files Needed:
 
 Initial Deployment:
 - Database initial data (saved in .csv)
-- SQL Table queries
-- Trigger Function queries
+- SQL Table queries (under sql_queries.sql)
+- Trigger Function queries (under sql_queries.sql)
 
 For testing:
 - client.py (refer Files)
 
 ------------------------------------------------------------
 
+How to Setup AquaSense Server?
+
 [INSTRUCTIONS]
-1.) 
+1.) Install the following:
+    - Python
+    - PostgreSQL
+        Credentials:
+        - host     = localhost
+        - dbname   = postgres
+        - user     = postgres
+        - password = 1234
+        - port     = 5432
+    - TimescaleDB
+
+2.) Open pgAdmin 
+    - Locate the following inside the project folder:
+        - sql_queries.sql
+        - ./setup 
+    - Using "sql_queries.sql", query all command (create tables, create trigger functions, additional queries)
+    - Under "./setup" folder, import all .csv files to its corresponding table (Import in pgAdmin) 
+
+3.) Setup files (.env, credentials.json)
+    - Locate the following files inside the project folder:
+        - .env
+        - credentials.json
+    - cd to "C:\Users\Public"
+    - Place .env and credentials.json
+
+4.) Run "AquaSense-Server.exe"
+    - If run successfully, the server will ask for your IP and port (OS to be added soon)
+    - Upon inputting the IP and port, the server will automatically synchronize the Firebase configuration data to the local configuration
+    - Once configured, the server will be actively looking for connection, ready to be deployed.
+
+
+--------------------------------------
+
+[TESTING]
+1.) Locate client.py
+2.) Setup the socket connection such that it matches the server.
+3.) If socket connection is successfully made, "client.py" will continuously send a random data to the server (per second)
