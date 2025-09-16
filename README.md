@@ -64,12 +64,15 @@ How to Setup AquaSense Server?
     - Using "sql_queries.sql", query all command (create tables, create trigger functions, additional queries)
     - Under "./setup" folder, import all .csv files to its corresponding table (Import in pgAdmin) 
 
-3.) Setup files (.env, credentials.json)
+3.) Setup files (.env, credentials.json, logo.png)
     - Locate the following files inside the project folder:
         - .env
         - credentials.json
+        - logo.png
     - cd to "C:\Users\Public"
-    - Place .env and credentials.json
+    - Place (1) - "credentials.json" and (2) - "logo.png" inside the folder
+    - cd to the folder with the AquaSense-Server.exe
+    - Place (1) - ".env" inside the folder
 
 4.) Run "AquaSense-Server.exe"
     - If run successfully, the server will ask for your IP and port (OS to be added soon)
